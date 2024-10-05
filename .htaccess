@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /BLOGWS_CODEIGNITER
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /BLOGWS_CODEIGNITER/index.php/$1 [L]
