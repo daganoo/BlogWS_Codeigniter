@@ -1,4 +1,9 @@
-	<!-- Start retroy layout blog posts -->
+	<? $this->extend('layout/app') ?>
+    <? $this->section('content') ?>
+    
+    
+    
+    <!-- Start retroy layout blog posts -->
 	<section class="section bg-light">
 		<div class="container">
 			<div class="row align-items-stretch retro-layout">
@@ -477,3 +482,6 @@
 
 		</div>
 	</div>
+
+
+    <? $this->endsection(); ?>
