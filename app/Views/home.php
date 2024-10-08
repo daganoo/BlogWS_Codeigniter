@@ -1,7 +1,6 @@
-	<? $this->extend('layout/app') ?>
-    <? $this->section('content') ?>
-    
-    
+<?php $this->extend('layout/app') ?>
+<?php $this->section('content') ?>
+
     
     <!-- Start retroy layout blog posts -->
 	<section class="section bg-light">
@@ -484,4 +483,5 @@
 	</div>
 
 
-    <? $this->endsection(); ?>
+    <?php $this->endsection(); ?>
+

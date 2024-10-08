@@ -25,7 +25,8 @@
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-	<link rel="stylesheet" href="<?= base_url('public/assets/css/tiny-slider.css' );?>">
+	<link rel="stylesheet" href="<?= base_url('public/assets/css/tiny-slider.css'); ?>">
+
 	<link rel="stylesheet" href="<?= base_url('public/assets/css/aos.css' );?>">
 	<link rel="stylesheet" href="<?= base_url('public/assets/css/glightbox.min.css' );?>">
 	<link rel="stylesheet" href="<?= base_url('public/assets/css/style.css' );?>">
@@ -68,8 +69,20 @@
 								<li><a href="category.html">Politics</a></li>
 								<li><a href="contact.html">Contact Us</a></li>
 								<li><a href="about.html">About Us</a></li>
-								<li><a href="login.html">Login</a></li>
-								<li><a href="register.html">Register</a></li>
+								<?php if(!isset(auth()->user()->username)): ?>
+									<li><a href="<?php echo base_url('login')?>">Login</a></li>
+									<li><a href="<?php echo base_url('register')?>">Register</a></li>
+								<?php endif; ?>
+								<?php if(isset(auth()->user()->username)): ?>
+								<li class="has-children">
+											<a href="#"><?php echo auth()->user()->username ?></a>
+											<ul class="dropdown">
+												<!--<li><a href="#">Sub Menu One</a></li -->
+												<!--<li><a href="#">Sub Menu Three</a></li -->
+												<li><a href="<?php echo base_url('logout') ?>">Logout</a></li>
+											</ul>
+										</li>
+								<?php endif; ?>
 							</ul>
 							
 						</div>
@@ -209,8 +222,6 @@
     <script src="<?= base_url('public/assets/js/tiny-slider.js');?>"></script>
 
     <script src="<?= base_url('public/assets/js/flatpickr.min.js');?>"></script>
-
-
     <script src="<?= base_url('public/assets/js/aos.js');?>"></script>
     <script src="<?= base_url('public/assets/js/glightbox.min.js');?>"></script>
     <script src="<?= base_url('public/assets/js/navbar.js');?>"></script>
